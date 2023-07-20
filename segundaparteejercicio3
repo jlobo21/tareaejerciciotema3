@@ -1,0 +1,23 @@
+public class coche {
+
+    public static void main(String[] args){
+        int numeroPuertas=4;
+        //System.out.println(numeroPuertas);
+
+        coche llamar= new coche();
+        int cuantas= llamar.incrementar(numeroPuertas);
+
+        System.out.println(" Al principio tenia " + numeroPuertas + " puertas" );
+        System.out.println(" Con la puerta que se le agrego quedo en "+ cuantas);
+    }
+    
+    
+    
+
+    public int incrementar(int a){
+        int total= a+1;
+        return total;
+
+    }
+
+}
