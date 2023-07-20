@@ -1,0 +1,28 @@
+def llenarMatriz():
+    for i in range(4):#aca con este for le doy forma de matriz. en el range (4) indica las filas y append *4 son las columnas que quiero que tenga y las relleno con 0
+        notas.append([0] * 4)
+    
+    for i in range(4):
+        for j in range(4):
+            notas[i][j]=int(input(f"ingrese una nota para estudiante {i+1}: "))#el corchete es para que cuanto acabe de ingresar las notas del estudiante 1, diga estudiante 2. y asi.
+
+def mostrarMatriz():
+    for i in range(4):
+        for j in range(4):
+            print(notas)
+
+#los arreglos bidimensionales se manejan con 2 ciclos for. El primer for va a ir recorriendo las filas, el segundo for las columnas.
+#ingresar las notas de los 5 estudiantes.
+
+def sumarNotas():
+    for i in range(4):
+        sumarNota=0
+        for j in range(4):
+            sumarNota +=notas[i][j] 
+        print(f"La suma de las notas del estudiante {i+1} es : ", sumarNota)
+
+
+notas=[]
+llenarMatriz()
+mostrarMatriz()
+sumarNotas()
