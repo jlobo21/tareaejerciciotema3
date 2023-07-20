@@ -1,0 +1,19 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        //System.out.println("Hello, World!");
+
+        App numeros = new App();
+        int mostrar= numeros.suma(5,10,6);
+
+        System.out.println(mostrar);
+        
+    }
+
+    public int suma(int a, int b, int c){
+
+        int resultado= a + b;
+        return(resultado);
+
+
+    }
+}
