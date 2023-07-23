@@ -1,0 +1,131 @@
+import random
+opcion=0
+adminUser="admin"
+adminContrasena="Adm543"
+contrasena=0
+usuario=0
+nombreCompleto=0
+cedula=0
+numTelefono=0
+correo=0
+direccion=0
+persona=0
+nacional="N"
+extranjero="E"
+edad=0
+adulto="D"
+adultoMayor="DM"
+opcionV=0
+extranjeroAdulto=0
+extranjeroAdultoMayor=0
+extranjeroNino=0
+nacionalAdulto=0
+nacionalAdultoMayor=0
+nacionalNino=0
+turnoMananaTarde=0
+fecha=0
+encargadoDeReserva=""
+codigoReserva=0
+hora=0
+descuento=0
+total=0
+nacionalAdultoMayorPrecio=0
+nacionalNinoPrecio=0
+extranjeroAdultoMayorPrecio=0
+extranjeroNinoPrecio=0
+nacionalAdultoPrecio=0
+extranjeroAdultoPrecio=0
+impuesto=0
+subtotal=0
+precioConDes=0
+pregunta=0
+cantVisitantes=0
+cantreservaciones=0
+
+
+usuario=input("Ingrese el usuario de admin:")
+contrasena=input("Ingrese la contrasena de admin:")
+
+lista=[]
+cantidad=[]
+reporteReservas=[]
+nuRegi=0
+
+
+
+def crearMV(nu):#nu es la variable nuRegi, que me lleva el conteo de los registros que se han hecho.
+
+    cont=1
+    print("Datos del responsable de la reservacion: 1 Nombre y apellido, 2 Cedula, 3 Numero Telefono, 4 Correo, 5 Direccion, 6 persona Nacional o Extranjero N/E, 7 Adulto o Adulto mayor A/M")
+    for filas in range(1):
+        lista=[]
+        for columnas in range(7):
+            dato=input(f"registro {nu}, dato {cont}: ")
+            lista.append(dato)
+            cont+=1
+            if cont <=7:
+                cont+=0
+            else:
+                cont=1
+    
+                
+        reporteReservas.append(lista)
+   
+        
+       
+    
+
+def mostrarVisitantes():
+    for row in reporteReservas:
+        for element in row:
+            print(element, end=' ')
+        print()
+        #print(len(matrix))
+    #print(reporteReservas[1][1])queria imprir una posicion en especifico para saber si se me creo la matriz bien.
+    print(reporteReservas[0][6])        
+while True:
+    
+    if usuario == adminUser and contrasena == adminContrasena:
+        print("\n")
+        print("\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+        print("\t %%%%%%%Bienvenidos a Aguas Termales el sueño tranquilo%%%%%%%")
+        print("\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+        print("\n")
+
+        print("\t 1 - Reservaciones y facturacion")
+        print("\t 2 - Venta de productos naturales")
+        print("\t 3 - Reportes")
+        print("\t 4 - Salir")
+        print("\n")
+
+        opcion= int(input("Escoga la opcion: "))
+        print("\n")
+        
+        
+        if opcion == 1:
+            print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+            print("\t A - Visitantes")
+            print("\t B - Reservaciones")
+            print("\t C - Facturacion")
+            print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+            print("\n")
+            opcionV=input("Escoja la opcion: ").upper()
+            print()
+            
+            if opcionV=="A":
+                    nuRegi+=1   
+                    crearMV(nuRegi)
+                
+            if opcionV=="B":
+                mostrarVisitantes()
+        if opcion == 3:
+            print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+            print("\t A - Listado de visitantes")
+            print("\t B - Reservaciones")
+            print("\t C - Facturacion")
+            print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+            print("\n")
+            opcionR=input("Escoja la opcion: ").upper()
+            print()
+            if opcionR== "A":
+                mostrarVisitantes()
